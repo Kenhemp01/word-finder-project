@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>practice</title>
+
+<script>
+
+const people = [
+	"a",
+	"able", 
+	"about",
+	"account",
+	"acid",
+    "across",
+    "act",
+    "addition",
+    "adjustment",
+    "advertisement",
+    "after",
+    "again",
+    "against",
+    "agreement",
+    "air","all",
+    "almost",
+    "among",
+    
+]
+
+const searchInput = document.querySelector('.input')
+
+searchInput.addEventListener("input", (e) => {
+    // inside, we will need to achieve a few things:
+    // 1. declare and assign the value of the event's target to a variable AKA whatever is typed in the search bar
+    let value = e.target.value
+
+    // 2. check: if input exists and if input is larger than 0
+    if (value && value.trim().length > 0){
+        // 3. redefine 'value' to exclude white space and change input to all lowercase
+         value = value.trim().toLowerCase()
+        // 4. return the results only if the value of the search is included in the person's name
+        // we need to write code (a function for filtering through our data to include the search input value)
+    } else {
+        // 5. return nothing
+        // input is invalid -- show an error message or show no results
+
+    }
+
+}
+
+const clearButton = document.getElementById('clear')
+
+clearButton.addEventListener("click", () => {
+    // 1. write a function that removes any previous results from the page
+})
+
+
+
+
+
+
+
+
+
+
+	
+</script>
+
+<style>
+*{
+   box-sizing: border-box;
+   margin: 0px;
+   padding: 0px;
+}
+.container{
+   margin-top: 25px;
+   margin-left:auto;
+   margin-right: auto;
+   min-height: 500px;
+   width: 80%;
+   border: 1px solid black;
+}
+.search-container{
+   width: 100%;
+}
+.search-container input{
+   width: 100%;
+   height: 40px;
+   font-size: 25px;
+}
+
+.list-container li{
+   list-style: none;
+   border: 1px solid red;
+   padding: 15px 15px;
+   font-size: 25px;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+ <div class="container">
+        <div class="search-container">
+           <input type="text" onkeyup="filterNames(event)">
+       </div>
+       <ul class="list-container" id ="list-container">
+           
+       </ul>
+   </div>
+
+</body>
+</html>
